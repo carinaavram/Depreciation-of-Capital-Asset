@@ -74,21 +74,16 @@ def ShowDepreciationOutput(numYrs, salvageVal, cost, purYr):
 
 def CalculateStraightLineDep(slDep, cost, salvageVal, numYrs):
     #This function calculates the straight line depreciation
-    #This function is not required in the assignment, but I thought will be good to have the straight line depreciation calculation in a function.
     slDep = (cost - salvageVal) / numYrs 
     return slDep
 
 def CalculateTotalDep(totalDep, slDep):
     #This function calculates the total depreciation for the output table
-    #In the instructions of the assignment, this function along with CalculateEndingValue function should be in the same function.
-    #However, I preferred to split them in order to have a more efficient code.
     totalDep = totalDep + slDep #Calculate total depreciation each time through the loop
     return totalDep
 
 def CalculateEndingValue(beginValue, slDep):
     #This function calculates the beginning value for the output table
-    #In the instructions of the assignment, this function along with CalculateTotalDep function should be in the same function.
-    #However, I preferred to split them, so I can initialize the endValue variable local to this function (since it is not needed anywhere else).
     #Declare local variables
     endValue = 0.00
     endValue = beginValue - slDep #Calculate ending value each time through the loop
